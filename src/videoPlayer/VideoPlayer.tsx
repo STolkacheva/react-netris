@@ -1,12 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import { EventModel } from "../model/EventModel";
-import {
-  Player,
-  PlayerState,
-  PlayerReference,
-  BigPlayButton,
-  LoadingSpinner,
-} from "video-react";
+import { Player, PlayerState, PlayerReference } from "video-react";
 import { EventList } from "./EventList";
 import { EventRectangles } from "./EventRectangles";
 
@@ -42,10 +36,7 @@ export const VideoPlayer: FC<IVideoPlayer> = ({ url, items }) => {
         autoPlay
         playsInline
         src={url}
-      >
-        <LoadingSpinner />
-        <BigPlayButton position="center" />
-      </Player>
+      ></Player>
       <EventList items={items} onClick={(item) => playFrom(item.timestamp)} />
       <EventRectangles currentState={state} items={items} />
     </>
